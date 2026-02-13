@@ -26,7 +26,6 @@ export default function LaptopDevice() {
 
   useEffect(() => {
   setData([]);
-  setPage(1);
 }, [category, params?.device]);
 
   console.log("in laptop device", data);

@@ -27,8 +27,7 @@ export default function MobileDevice() {
 
   useEffect(() => {
     setData([]);
-    setPage(1);
-  }, [category, params.device]);
+  }, [category, params?.device]);
 
   console.log("in mobile device", data);
   return (

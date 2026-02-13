@@ -8,16 +8,16 @@ export const apiContext = createContext();
 export function ApiContextProvider({ children }) {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
-  const [category, setCategory] = useState();
+  const [category, setCategory] = useState("bike");
   const params = useParams();
-  
+  const apiKey=process.env.NEXT_PUBLIC_API_KEY;
   async function fetchData() {
     let ans = params?.device === "laptop" ? "landscape" : "portrait";
     let response = await axios(
-      `https://api.unsplash.com/search/photos?query=${category}&orientation=${ans}&per_page=30&page=${page}&client_id=4gwXG5urvcklOQqXdCY_iv5StHDeQXtWOHcqTpTRtxU`,
+      `https://api.unsplash.com/search/photos?query=${category}&orientation=${ans}&per_page=30&page=${page}&client_id=${apiKey}`,
     );
     let actualUrls = await response.data.results;
-    // setData((prev) => [...prev, ...actualUrls]);
+    setData((prev) => [...prev, ...actualUrls]);
     setPage((prev) => prev + 1);
     
   }
