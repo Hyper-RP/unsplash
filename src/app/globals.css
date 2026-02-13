@@ -24,3 +24,19 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer base {
+  button, a, input, select, textarea {
+    @apply transition-all duration-300 ease-in-out;
+  }
+}
+.mobile {
+  height: 25rem;
+  width: 13.5rem;
+}
+
+.laptop{
+  width: 23rem;
+  height: 13rem;
+}
+
