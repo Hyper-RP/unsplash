@@ -73,10 +73,10 @@ export default function MobileDevice() {
         </>
       )}
       {data.length > 0 ? (
-        <div className=" w-10/12 mx-auto flex mt-4 justify-center gap-[1rem] flex-wrap">
+        <div className=" w-11/12 mx-auto flex mt-4 justify-center gap-[0.5rem] sm:gap-[1rem] flex-wrap">
           {data.map((item) => {
             return (
-              <div className="mobile z-10" key={item.id}>
+              <div className="h-[23rem] w-[12.5rem] sm:mobile z-10" key={item.id}>
                 <Image
                   className="rounded-xl h-full w-full"
                   src={item.urls.small}
