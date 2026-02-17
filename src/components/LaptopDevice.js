@@ -73,7 +73,7 @@ export default function LaptopDevice() {
           <div className=" w-auto  flex justify-center  mt-4 gap-[0.3rem] sm:gap-[0.8rem] flex-wrap">
             {data.map((image) => {
               return (
-                <div className="h-[10rem] w-[23rem] md:h-[13rem] md:w-[23rem] min-w-[2rem] z-10" key={image.id}>
+                <div className="h-[11.5rem] w-[23rem] md:h-[13rem] md:w-[23rem] min-w-[2rem] z-10" key={image.id}>
                   <Image
                     className="rounded-xl h-full w-full"
                     src={image.urls.small}
