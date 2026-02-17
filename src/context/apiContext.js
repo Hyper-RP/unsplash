@@ -1,7 +1,7 @@
 "use client";
 import axios from "axios";
 import { useParams } from "next/navigation";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const apiContext = createContext();
 
@@ -11,6 +11,7 @@ export function ApiContextProvider({ children }) {
   const [category, setCategory] = useState("bike");
   const params = useParams();
   const apiKey=process.env.NEXT_PUBLIC_API_KEY;
+
   async function fetchData() {
     let ans = params?.device === "laptop" ? "landscape" : "portrait";
     let response = await axios(
@@ -22,6 +23,11 @@ export function ApiContextProvider({ children }) {
     
   }
 
+  useEffect(()=>{
+    setData([]);
+    fetchData()
+  },[params.device,category])
+  
   let value = {
     data,
     setData,

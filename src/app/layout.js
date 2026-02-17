@@ -6,7 +6,7 @@ import TabsSection from "@/components/TabsSection";
 
 export default async function RootLayout({ children }) {
   const cookieStore = await cookies();
-  const theme = cookieStore.get("theme")?.value || "dark";
+  const theme = cookieStore.get("theme")?.value || "light";
   return (
     <html lang="en">
       <body className={`w-full  h-full `}>

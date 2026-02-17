@@ -7,14 +7,13 @@ import { FaMoon } from "react-icons/fa";
 import { MdSunny } from "react-icons/md";
 import { PiDeviceMobileSpeakerLight } from "react-icons/pi";
 import { CiLaptop } from "react-icons/ci";
-import { apiContext } from "@/context/apiContext";
 import { useParams } from "next/navigation";
 function Navbar() {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
   const params = useParams();
   const router = useRouter();
-  const { fetchData, setData } = useContext(apiContext);
-  async function viewHandler() {
+
+   function viewHandler() {
     router.push(params.device === "mobile" ? "/laptop" : "/mobile");
   }
 
@@ -28,11 +27,6 @@ function Navbar() {
   useEffect(() => {
     document.cookie = `theme=${theme};path=/`;
   },[]);
-
-  useEffect(() => {
-    setData([]);
-    fetchData();
-  }, [params.device]);
 
   return (
     <div className="w-10/12 relative mx-auto flex justify-center ">

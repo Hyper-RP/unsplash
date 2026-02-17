@@ -4,15 +4,10 @@ import { motion } from "framer-motion";
 import { apiContext } from "@/context/apiContext";
 
 export default function TabsSection() {
-  const { category, setCategory, fetchData, setData } =
+  const { setCategory } =
     useContext(apiContext);
   const [active, setActive] = useState(0);
   const [inputValue, setInputValue] = useState("");
-
-  useEffect(() => {
-    setData([])
-    fetchData();
-  }, [category]);
 
   const tabs = [
     { id: 0, title: "bike" },

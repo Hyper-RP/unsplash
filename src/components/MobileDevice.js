@@ -1,5 +1,5 @@
 "use client";
-import { motion, AnimatePresence } from "framer-motion";  
+import { motion, AnimatePresence } from "framer-motion";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { apiContext } from "@/context/apiContext";
@@ -21,9 +21,8 @@ export default function MobileDevice() {
     if (observerRef.current) {
       observer.observe(observerRef.current);
     }
-
     return () => observer.disconnect();
-  }, [ fetchData]);
+  }, [fetchData]);
 
   useEffect(() => {
     setData([]);
@@ -76,7 +75,10 @@ export default function MobileDevice() {
         <div className=" w-11/12 mx-auto flex mt-4 justify-center gap-[0.8rem]  flex-wrap">
           {data.map((item) => {
             return (
-              <div className="h-[20rem] w-[11rem] md:h-[25rem] md:w-[13.5rem] lg:h-[25rem] lg:w-[13.5rem] z-10" key={item.id}>
+              <div
+                className="h-[20rem] w-[11rem] md:h-[25rem] md:w-[13.5rem] lg:h-[25rem] lg:w-[13.5rem] z-10"
+                key={item.id}
+              >
                 <Image
                   className="rounded-xl h-full w-full"
                   src={item.urls.small}
