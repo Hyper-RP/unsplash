@@ -54,7 +54,7 @@ export default function LaptopDevice() {
                 height={1000}
                 src={selectedImage}
                 alt="Selected"
-                className="rounded-xl h-[22rem] w-[41rem]  shadow-2xl"
+                className="rounded-xl h-[14rem] w-[22rem]  shadow-2xl"
               />
 
               <a
@@ -70,10 +70,10 @@ export default function LaptopDevice() {
       </AnimatePresence>
       {data.length > 0 ? (
         <div className="w-full h-full  flex justify-center">
-          <div className=" w-auto  flex justify-center  mt-4 gap-[1rem] flex-wrap">
+          <div className=" w-auto  flex justify-center  mt-4 gap-[0.3rem] sm:gap-[0.8rem] flex-wrap">
             {data.map((image) => {
               return (
-                <div className="laptop min-w-[2rem] z-10" key={image.id}>
+                <div className="h-[10rem] w-[23rem] md:h-[13rem] md:w-[23rem] min-w-[2rem] z-10" key={image.id}>
                   <Image
                     className="rounded-xl h-full w-full"
                     src={image.urls.small}
