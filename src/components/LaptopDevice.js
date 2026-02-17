@@ -54,7 +54,7 @@ export default function LaptopDevice() {
                 height={1000}
                 src={selectedImage}
                 alt="Selected"
-                className="rounded-xl h-[14rem] w-[22rem]  shadow-2xl"
+                className="rounded-xl h-[14rem] w-[22rem] md:w-[40rem] md:h-[22rem]  shadow-2xl"
               />
 
               <a

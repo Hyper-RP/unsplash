@@ -55,7 +55,7 @@ export default function MobileDevice() {
                     height={1000}
                     src={selectedImage}
                     alt="not found"
-                    className="rounded-xl w-[19rem] h-[35rem]  shadow-2xl"
+                    className="rounded-xl w-[19rem] h-[34rem] md:h-[31rem] md:w-[17rem]  shadow-2xl"
                   />
 
                   <a

@@ -1,48 +1,39 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
-import { useContext, useState, useEffect } from "react";
 import { FaMoon } from "react-icons/fa";
 import { MdSunny } from "react-icons/md";
 import { PiDeviceMobileSpeakerLight } from "react-icons/pi";
 import { CiLaptop } from "react-icons/ci";
+import { useContext } from "react";
+import { themeContext } from "@/context/themeContext";
 import { useParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 function Navbar() {
-  const [theme, setTheme] = useState("light");
-  const params = useParams();
-  const router = useRouter();
-
-   function viewHandler() {
+  const{theme,themeHandler}=useContext(themeContext)
+  const params=useParams();
+  const router=useRouter();
+  function viewHandler() {
     router.push(params.device === "mobile" ? "/laptop" : "/mobile");
   }
 
-  function themeHandler() {
-    const newTheme=theme==="dark" ? "light" : "dark";
-    setTheme(newTheme);
-    document.cookie = `theme=${newTheme};path=/`;
-    router.refresh();
-  }
-
-  useEffect(() => {
-    document.cookie = `theme=${theme};path=/`;
-  },[]);
+  console.log("theme : ",theme)
 
   return (
     <div className="w-10/12 relative mx-auto flex justify-center ">
       <motion.div
-  key={theme}
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ duration: 0.5 }}
->
-  <Image
-    src={theme === "light" ? "/logo/R-img.jpg" : "/logo/R-logo2.png"}
-    width={100}
-    height={100}
-    alt="logo"
-  />
-</motion.div>
+        key={theme}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <Image
+          src={theme === "light" ? "/logo/R-img.jpg" : "/logo/R-logo2.png"}
+          width={100}
+          height={100}
+          alt="logo"
+        />
+      </motion.div>
       <div className="flex w-[5rem] mt-[1rem]  absolute right-[2rem] justify-between">
         {theme === "dark" ? (
           <FaMoon
