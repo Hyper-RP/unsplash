@@ -76,7 +76,7 @@ export default function MobileDevice() {
           {data.map((item) => {
             return (
               <div
-                className="h-[20rem] w-[11rem] md:h-[25rem] md:w-[13.5rem] lg:h-[25rem] lg:w-[13.5rem] z-10"
+                className="h-[20rem] w-[10.2rem] md:h-[25rem] md:w-[13.5rem] lg:h-[25rem] lg:w-[13.5rem] z-10"
                 key={item.id}
               >
                 <Image

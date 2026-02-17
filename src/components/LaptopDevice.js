@@ -70,7 +70,7 @@ export default function LaptopDevice() {
       </AnimatePresence>
       {data.length > 0 ? (
         <div className="w-full h-full  flex justify-center">
-          <div className=" w-auto  flex justify-center  mt-4 gap-[0.3rem] sm:gap-[0.8rem] flex-wrap">
+          <div className=" w-auto  flex justify-center  mt-4 gap-[0.3rem] md:gap-[0.8rem] flex-wrap">
             {data.map((image) => {
               return (
                 <div className="h-[11.5rem] w-[23rem] md:h-[13rem] md:w-[23rem] min-w-[2rem] z-10" key={image.id}>
